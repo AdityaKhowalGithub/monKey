@@ -3,6 +3,7 @@
   import CloseIcon from '~icons/mdi/close-outline';
   import MenuIcon from '~icons/material-symbols/menu';
   import DarkModeIcon from '~icons/material-symbols/dark-mode-outline-rounded';
+  
   let files = [
     { name: "Document.pdf", size: "1.5 MB", icon: 'mdi:file-document-outline' },
     { name: "Photo.jpg", size: "2.4 MB", icon: 'mdi:image' },
@@ -57,7 +58,7 @@
     position: relative;
   }
   .sidebar.hide {
-    transform: translateX(-150%);
+    transform: translateX(-120%);
   }
   .content {
     flex-grow: 1;
@@ -65,9 +66,11 @@
     padding: 16px;
     transition: margin-left 0.3s;
     background-color: #fff;
+    margin-left: 0px;
   }
   .content.expanded {
-    margin-left: 0;
+    /* transition right by 100 pixels */
+    margin-left: -255px;
   }
   .file, .directory {
     display: flex;
@@ -91,7 +94,7 @@
   }
   .toggle-button{
     position: fixed;
-    top: 10px;
+    top: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,7 +103,7 @@
     cursor: pointer;
     color: #555;
     z-index: 3;
-    padding: 8px;
+    padding: 5px;
     border-radius: 50%;
     transition: background-color 0.3s;
   }
@@ -133,7 +136,7 @@
     left: 10px;
   }
   input[type="text"] {
-    width: 100%;
+    width: 85%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
